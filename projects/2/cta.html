@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+body {
+  background-color:#059;
+}
+button {
+  background-color:#1585CB;
+  color:white;
+  font-size:20px;
+  border-style:solid;
+  border-width:1px;
+  border-color:red;
+  border-radius:5px;
+}
+h1 {
+  color:white;
+  font-size:50px;
+}
+
+.one {
+  background-color:#1585CB;
+  color:white;
+  border-style:round;
+  border-width:10px;
+  border-radius:5px;
+
+}
+.two {
+  background-color:red;
+  color:white;
+  border-style:round;
+  border-width:10px;
+  border-radius:5px;
+}
+  </style>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<h1>Cta Buses Near Lane Tech</h1>
+<button type="button" id="btnwestern">Western</button>
+<button type="button" id="btnaddison">Addison</button>
+<button type="button" id="btncalifornia">Kedzie/California</button>
+<button type="button" id="btnbelmont">Belmont</button>
+<button type="button" id="btndamen">Damen</button>
+<button type="button" id="btnirvingpark">Irving Park</button>
+<div id="western" class="one"></div>
+<div id="westernn" class="two"></div>
+<div id="addison" class="one"></div>
+<div id="addisonn" class="two"></div>
+<div id="california" class="one"></div>
+<div id="belmont" class="one"></div>
+<div id="belmontt" class="two"></div>
+<div id="damen" class="one"></div>
+<div id="damenn" class="two"></div>
+<div id="irvingpark" class="one"></div>
+<div id="irvingparkk" class="two"></div>
+
+ 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+        $(function() {
+          
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          
+          var apiEndpoint = "http://ctabustracker.com/bustime/api/v2/getpredictions";
+          
+          $("#btnwestern").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"49,X49",
+                      "stpid":"8417",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#western").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+                  
+$("#btnwestern").on("click",function(hide) {
+              });
+
+            });
+            
+            });
+          });
+                    $("#btnwestern").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"49,X49",
+                      "stpid":"8195",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#westernn").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+                  
+
+              });
+
+            });
+            
+            });
+          });
+                  $("#btnaddison").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"152",
+                      "stpid":"12527",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#addison").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+                            $("#btnaddison").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"152",
+                      "stpid":"12569",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#addisonn").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+                $("#btncalifornia").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"52",
+                      "stpid":"17787",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#california").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+          
+          
+           $("#btndamen").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"50",
+                      "stpid":"8946",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#damen").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+        $("#btndamen").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"50",
+                      "stpid":"8831",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#damenn").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+                   $("#btnbelmont").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"77",
+                      "stpid":"17342",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#belmont").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+           $("#btnbelmont").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"77",
+                      "stpid":"7937",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#belmontt").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+                             $("#btnirvingpark").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"80",
+                      "stpid":"17493",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#irvingpark").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+           $("#btnirvingpark").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+                    $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"80",
+                      "stpid":"5691",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#irvingparkk").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+
+              });
+
+            });
+            
+            });
+          });
+        });
+  
+</script>
+ 
+</body>
+</html>
