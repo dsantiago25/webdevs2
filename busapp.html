@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <!-- Simple header with fixed tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+                mdl-layout--fixed-tabs">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Title</span>
+        </div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
+          <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
+          <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+      </div>
+      <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+          <div class="page-content"><!-- Your content goes here --></div>
+<html lang="en">
+  <style>
+body {
+  background-color:#059;
+}
+button {
+  background-color:#1585CB;
+  color:white;
+  font-size:20px;
+  border-style:solid;
+  border-width:1px;
+  border-color:red;
+  border-radius:5px;
+}
+h1 {
+  color:white;
+  font-size:50px;
+}
+.one {
+  background-color:#1585CB;
+  color:white;
+  border-style:round;
+  border-width:10px;
+  border-radius:5px;
+}
+.two {
+  background-color:red;
+  color:white;
+  border-style:round;
+  border-width:10px;
+  border-radius:5px;
+}
+  </style>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<h1>Cta Buses Near Lane Tech</h1>
+<button type="button" id="btnwestern">Western</button>
+<button type="button" id="btnaddison">Addison</button>
+<button type="button" id="btncalifornia">Kedzie/California</button>
+<button type="button" id="btnbelmont">Belmont</button>
+<button type="button" id="btndamen">Damen</button>
+<button type="button" id="btnirvingpark">Irving Park</button>
+<div id="western" class="one"></div>
+<div id="westernn" class="two"></div>
+<div id="addison" class="one"></div>
+<div id="addisonn" class="two"></div>
+<div id="california" class="one"></div>
+<div id="belmont" class="one"></div>
+<div id="belmontt" class="two"></div>
+<div id="damen" class="one"></div>
+<div id="damenn" class="two"></div>
+<div id="irvingpark" class="one"></div>
+<div id="irvingparkk" class="two"></div>
+
+ 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+        $(function() {
+          
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          
+          var apiEndpoint = "http://ctabustracker.com/bustime/api/v2/getpredictions";
+          
+          $("#btnwestern").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"49,X49",
+                      "stpid":"8417",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#western").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+                  
+$("#btnwestern").on("click",function(hide) {
+              });
+            });
+            
+            });
+          });
+                    $("#btnwestern").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"49,X49",
+                      "stpid":"8195",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#westernn").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+                  
+              });
+            });
+            
+            });
+          });
+                  $("#btnaddison").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"152",
+                      "stpid":"12527",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#addison").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+                            $("#btnaddison").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"152",
+                      "stpid":"12569",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#addisonn").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+                $("#btncalifornia").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"52",
+                      "stpid":"17787",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#california").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+          
+          
+           $("#btndamen").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"50",
+                      "stpid":"8946",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#damen").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+        $("#btndamen").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"50",
+                      "stpid":"8831",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#damenn").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+                   $("#btnbelmont").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"77",
+                      "stpid":"17342",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#belmont").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+           $("#btnbelmont").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"77",
+                      "stpid":"7937",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#belmontt").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+                             $("#btnirvingpark").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+          $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"80",
+                      "stpid":"17493",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#irvingpark").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+          });
+           $("#btnirvingpark").on("click",function() {
+          $("#western").html("")
+          $("#addison").html("");
+          $("#california").html("")
+          $("#damen").html("")
+          $("#belmont").html("")
+          $("#irvingpark").html("")
+                    $("#westernn").html("")
+          $("#addisonn").html("");
+          $("#californiaa").html("")
+          $("#damenn").html("")
+          $("#belmontt").html("")
+          $("#irvingparkk").html("")
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "8x7TWKVqgwg77AKPsbrBQWYV4",
+                      "rt":"80",
+                      "stpid":"5691",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each (data,
+              function (index, value) {
+                 $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#irvingparkk").append("<br>"+"Route #" +v.rt+ "<br>"+ v.prdctdn + " minutes" +"<br>"+ v.rtdir+"<br>"+"To "+v.des+"<br>");
+              });
+            });
+            
+            });
+           });
+          });
+        });
+</script>
+ 
+</body>
+</html>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+          <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+          <div class="page-content">
+            <select id=route></select>
+            <br>
+            <select id="direction"></select>
+            <br>
+            <select id="stop"></select>
+            <br>
+            <a href="#" class="btn btn-primary" id="btnenter">Submit</a>
+            <script>
+
+            $(function() {
+          
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          var routesdata="http://www.ctabustracker.com/bustime/api/v2/getroutes";
+          var stopdirection="http://www.ctabustracker.com/bustime/api/v2/getdirections";
+          var busstops= "http://www.ctabustracker.com/bustime/api/v2/getstops";
+            $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": routesdata,
+                      "key" : "7nkaa8LTAZQr39SyzNvScQtzS",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each(data["bustime-response"]["routes"], 
+                        function (index, value) {
+                          var option=$("<option>");
+                          option.attr("value",value.rt);
+                          option.text(value.rt + "-" + value.rtnm);
+                          $("#route").append(option);
+                          
+                        });
+              
+        });
+        
+        
+        $("#route").change(function(){
+          var addval= $("#route").val();
+        $("option").remove("#remove");
+        $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": stopdirection,
+                      "key" : "7nkaa8LTAZQr39SyzNvScQtzS",
+                      "rt" :addval,
+                      "format":"json"}
+        }).done (function (data) {
+              console.log(data);
+              $.each(data["bustime-response"]["directions"], 
+                        function (index, value) {
+                          var option=$("<option id='remove'>");
+                          option.attr("value",value.dir);
+                          option.text(value.dir);
+                          $("#direction").append(option);
+                          
+                        });
+        });
+        });
+        $("#direction").change(function(){
+           var addval= $("#route").val();
+          var direction2= $("#direction").val();
+          $("option").remove("#removestop");
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": busstops,
+                      "key" : "7nkaa8LTAZQr39SyzNvScQtzS",
+                      "rt" :addval,
+                      "dir" :direction2 ,
+                      "format":"json"}
+        }).done(function (data) {
+              console.log(data);
+              $.each(data["bustime-response"]["stops"], 
+                        function (index, value) {
+                          var option=$("<option id='removestop'>");
+                          option.attr("value",value.stpnm);
+                          option.text(value.stpnm);
+                          $("#stop").append(option);
+                          
+                        });
+        });
+        
+});
+});
+     </script>
+<script>
+            $(function() {
+          var db = new Dexie("busstoreDB");
+         db.version(1).stores({
+           busstore: '++id,route,direction,stop'
+         });
+         
+               
+     $("#btnenter").on("click", function() {
+        var enterroute= $("#route").val();
+        var enterdirection= $("#direction").val();
+        var enterstop= $("#stop").val();
+        db.busstore.add({
+                     route: enterroute,
+                     direction: enterdirection,
+                     stop: enterstop,
+                    
+                   });
+          
+          
+        });
+     
+     $("#databutton1").on("click", function() {
+     
+     
+           db.employees.each(function(employee) {
+             var html = "<strong>" + employee.name + "</strong>";
+             html += "<br>" + employee.department + "<br><br>";
+             $("#display").append(html);
+           });
+         });
+     
+     
+         });
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          var routesdata="http://www.ctabustracker.com/bustime/api/v2/getroutes";
+          var stopdirection="http://www.ctabustracker.com/bustime/api/v2/getdirections";
+          var busstops= "http://www.ctabustracker.com/bustime/api/v2/getstops";
+            $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": routesdata,
+                      "key" : "7nkaa8LTAZQr39SyzNvScQtzS",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $.each(data["bustime-response"]["routes"], 
+                        function (index, value) {
+                          var option=$("<option>");
+                          option.attr("value",value.rt,value.rtnm);
+                          option.text(value.rt + "-" + value.rtnm);
+                          $("#route").append(option);
+                          
+                        });
+              
+        });
+        
+        
+        $("#route").change(function(){
+          var addval= $("#route").val();
+        $("option").remove("#remove");
+        $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": stopdirection,
+                      "key" : "7nkaa8LTAZQr39SyzNvScQtzS",
+                      "rt" :addval,
+                      "format":"json"}
+        }).done (function (data) {
+              console.log(data);
+              $.each(data["bustime-response"]["directions"], 
+                        function (index, value) {
+                          var option=$("<option id='remove'>");
+                          option.attr("value",value.dir);
+                          option.text(value.dir);
+                          $("#direction").append(option);
+                          
+                        });
+        });
+        });
+        $("#direction").change(function(){
+           var addval= $("#route").val();
+          var direction2= $("#direction").val();
+          $("option").remove("#removestop");
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": busstops,
+                      "key" : "7nkaa8LTAZQr39SyzNvScQtzS",
+                      "rt" :addval,
+                      "dir" :direction2 ,
+                      "format":"json"}
+        }).done(function (data) {
+              console.log(data);
+              $.each(data["bustime-response"]["stops"], 
+                        function (index, value) {
+                          var option=$("<option id='removestop'>");
+                          option.attr("value",value.stpnm);
+                          option.text(value.stpnm);
+                          $("#stop").append(option);
+                          
+                        });
+        });
+        
+});
+        
+     </script>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
