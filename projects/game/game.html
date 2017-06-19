@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            canvas {
+              border: 5px solid #000000;
+            }
+            .hide {
+              display: none;
+            }
+            #start {
+              background-color:green;
+            }
+            body {
+              background-color:pink;
+            }
+        </style>
+    </head>
+    <body>
+          <main class="mdl-layout__content">
+            <div class="page-content">
+              <img src="./harm.png" alt="harm" class="hide" id="harm">
+              <img src="./star.png" alt="star" class="hide" id="star">
+              <img src="./spaceship.png" alt="Spaceship" class="hide" id="player">
+              <img src="./background.jpg" alt="Background" class="hide" id="background">
+              <img src="./help.png" alt="help" class="hide" id="help">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="start">
+                Click to begin
+              </button>
+              <canvas height="250px" id="canvas" width="500px"></canvas><br>
+              <!-- Colored raised button -->
+            </div>
+          </main>
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+          /* global $ */
+          $(function() {
+            $("#start").click(function() {
+              var c = document.getElementById("canvas");
+              var ctx = c.getContext("2d");
+              var lives = 3;
+              var score = 0;
+              var player = {x: 5, y: 125};
+              var image = document.getElementById("player");
+              var background = document.getElementById("background");
+              var star = document.getElementById("star");
+              var help = document.getElementById("help");
+              var harm = document.getElementById("harm");
+              var starCoords = {x: 500, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords11 = {x: 525, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords2 = {x: 550, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords12 = {x: 575, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords3 = {x: 600, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords13 = {x: 625, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords4 = {x: 650, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords14 = {x: 675, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords5 = {x: 700, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords15 = {x: 725, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords6 = {x: 750, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords16 = {x: 775, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords7 = {x: 800, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords17 = {x: 825, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords8 = {x: 850, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords18 = {x: 875, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords9 = {x: 900, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords19 = {x: 925, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords10 = {x: 950, y: Math.floor((Math.random() * 220) + 1)};
+              var starCoords20 = {x: 975, y: Math.floor((Math.random() * 220) + 1)};
+              var helpCoords = {x: 500, y: Math.floor((Math.random() * 220) + 1)};
+              var helpCoords2 = {x: 500 + (c.width / 3), y: Math.floor((Math.random() * 220) + 1)};
+              var helpCoords3 = {x: 500 + (c.width / 1.5), y: Math.floor((Math.random() * 220) + 1)};
+              var harmCoords = {x: 500, y: Math.floor((Math.random() * 220) + 1)};
+              var harmCoords2 = {x: 500 + (c.width / 3), y: Math.floor((Math.random() * 220) + 1)};
+              var harmCoords3 = {x: 500 + (c.width / 1.5), y: Math.floor((Math.random() * 220) + 1)};
+              // main animation loop
+              function animate() {
+                // draw background
+                var helpSpeed = 3;
+                var harmSpeed = 3;
+                ctx.drawImage(background, 0, 0);
+                ctx.drawImage(star, starCoords.x, starCoords.y);
+                ctx.drawImage(star, starCoords2.x, starCoords2.y);
+                ctx.drawImage(star, starCoords3.x, starCoords3.y);
+                ctx.drawImage(star, starCoords4.x, starCoords4.y);
+                ctx.drawImage(star, starCoords5.x, starCoords5.y);
+                ctx.drawImage(star, starCoords6.x, starCoords6.y);
+                ctx.drawImage(star, starCoords7.x, starCoords7.y);
+                ctx.drawImage(star, starCoords8.x, starCoords8.y);
+                ctx.drawImage(star, starCoords9.x, starCoords9.y);
+                ctx.drawImage(star, starCoords10.x, starCoords10.y);
+                ctx.drawImage(star, starCoords11.x, starCoords11.y);
+                ctx.drawImage(star, starCoords12.x, starCoords12.y);
+                ctx.drawImage(star, starCoords13.x, starCoords13.y);
+                ctx.drawImage(star, starCoords14.x, starCoords14.y);
+                ctx.drawImage(star, starCoords15.x, starCoords15.y);
+                ctx.drawImage(star, starCoords16.x, starCoords16.y);
+                ctx.drawImage(star, starCoords17.x, starCoords17.y);
+                ctx.drawImage(star, starCoords18.x, starCoords18.y);
+                ctx.drawImage(star, starCoords19.x, starCoords19.y);
+                ctx.drawImage(star, starCoords20.x, starCoords20.y);
+                starCoords.x = starCoords.x - 5;
+                starCoords2.x = starCoords2.x - 5;
+                starCoords3.x = starCoords3.x - 5;
+                starCoords4.x = starCoords4.x - 5;
+                starCoords5.x = starCoords5.x - 5;
+                starCoords6.x = starCoords6.x - 5;
+                starCoords7.x = starCoords7.x - 5;
+                starCoords8.x = starCoords8.x - 5;
+                starCoords9.x = starCoords9.x - 5;
+                starCoords10.x = starCoords10.x - 5;
+                starCoords11.x = starCoords11.x - 5;
+                starCoords12.x = starCoords12.x - 5;
+                starCoords13.x = starCoords13.x - 5;
+                starCoords14.x = starCoords14.x - 5;
+                starCoords15.x = starCoords15.x - 5;
+                starCoords16.x = starCoords16.x - 5;
+                starCoords17.x = starCoords17.x - 5;
+                starCoords18.x = starCoords18.x - 5;
+                starCoords19.x = starCoords19.x - 5;
+                starCoords20.x = starCoords20.x - 5;
+                if (starCoords.x < -5) {
+                  starCoords.x = 500;
+                  starCoords.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords2.x < -5) {
+                  starCoords2.x = 500;
+                  starCoords2.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords3.x < -5) {
+                  starCoords3.x = 500;
+                  starCoords3.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords4.x < -5) {
+                  starCoords4.x = 500;
+                  starCoords4.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords5.x < -5) {
+                  starCoords5.x = 500;
+                  starCoords5.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords6.x < -5) {
+                  starCoords6.x = 500;
+                  starCoords6.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords7.x < -5) {
+                  starCoords7.x = 500;
+                  starCoords7.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords8.x < -5) {
+                  starCoords8.x = 500;
+                  starCoords8.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords9.x < -5) {
+                  starCoords9.x = 500;
+                  starCoords9.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords10.x < -5) {
+                  starCoords10.x = 500;
+                  starCoords10.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords11.x < -5) {
+                  starCoords11.x = 500;
+                  starCoords11.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords12.x < -5) {
+                  starCoords12.x = 500;
+                  starCoords12.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords13.x < -5) {
+                  starCoords13.x = 500;
+                  starCoords13.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords14.x < -5) {
+                  starCoords14.x = 500;
+                  starCoords14.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords15.x < -5) {
+                  starCoords15.x = 500;
+                  starCoords15.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords16.x < -5) {
+                  starCoords16.x = 500;
+                  starCoords16.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords17.x < -5) {
+                  starCoords17.x = 500;
+                  starCoords17.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords18.x < -5) {
+                  starCoords18.x = 500;
+                  starCoords18.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords19.x < -5) {
+                  starCoords19.x = 500;
+                  starCoords19.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (starCoords20.x < -5) {
+                  starCoords20.x = 500;
+                  starCoords20.y = Math.floor((Math.random() * 220) + 1);
+                }
+                // draw player
+                ctx.drawImage(image, player.x, player.y);
+                // draw harm
+                ctx.drawImage(harm, harmCoords.x, harmCoords.y);
+                ctx.drawImage(harm, harmCoords2.x, harmCoords2.y);
+                ctx.drawImage(harm, harmCoords3.x, harmCoords3.y);
+                harmCoords.x = harmCoords.x - harmSpeed;
+                harmCoords2.x = harmCoords2.x - harmSpeed;
+                harmCoords3.x = harmCoords3.x - harmSpeed;
+                if (harmCoords.x < -50) {
+                  harmCoords.x = 500;
+                  harmCoords.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (harmCoords2.x < -50) {
+                  harmCoords2.x = 500;
+                  harmCoords2.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (harmCoords3.x < -50) {
+                  harmCoords3.x = 500;
+                  harmCoords3.y = Math.floor((Math.random() * 220) + 1);
+                }
+                // check for and handle harm collision
+                var rect1 = {x: player.x, y: player.y, width: 50, height: 31};
+                var rect2 = {x: harmCoords.x, y: harmCoords.y, width: 20, height: 13};
+                var rect3 = {x: harmCoords2.x, y: harmCoords2.y, width: 20, height: 13};
+                var rect4 = {x: harmCoords3.x, y: harmCoords3.y, width: 20, height: 13};
+                if (rect1.x < rect2.x + rect2.width && rect1.x + rect1.width > rect2.x && rect1.y < rect2.y + rect2.height && rect1.height + rect1.y > rect2.y) {
+                  harmCoords.x = 500;
+                  harmCoords.y = Math.floor((Math.random() * 220) + 1);
+                  lives -= 1;
+                } else if (rect1.x < rect3.x + rect3.width && rect1.x + rect1.width > rect3.x && rect1.y < rect3.y + rect3.height && rect1.height + rect1.y > rect3.y) {
+                  harmCoords2.x = 500;
+                  harmCoords2.y = Math.floor((Math.random() * 220) + 1);
+                  lives -= 1;
+                } else if (rect1.x < rect4.x + rect4.width && rect1.x + rect1.width > rect4.x && rect1.y < rect4.y + rect4.height && rect1.height + rect1.y > rect4.y) {
+                  harmCoords3.x = 500;
+                  harmCoords3.y = Math.floor((Math.random() * 220) + 1);
+                  lives -= 1;
+                }
+                // draw help
+                ctx.drawImage(help, helpCoords.x, helpCoords.y);
+                ctx.drawImage(help, helpCoords2.x, helpCoords2.y);
+                ctx.drawImage(help, helpCoords3.x, helpCoords3.y);
+                helpCoords.x = helpCoords.x - helpSpeed;
+                helpCoords2.x = helpCoords2.x - helpSpeed;
+                helpCoords3.x = helpCoords3.x - helpSpeed;
+                if (helpCoords.x < -50) {
+                  helpCoords.x = 500;
+                  helpCoords.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (helpCoords2.x < -50) {
+                  helpCoords2.x = 500;
+                  helpCoords2.y = Math.floor((Math.random() * 220) + 1);
+                }
+                if (helpCoords3.x < -50) {
+                  helpCoords3.x = 500;
+                  helpCoords3.y = Math.floor((Math.random() * 220) + 1);
+                }
+                // check for help collision
+                var rect5 = {x: helpCoords.x, y: helpCoords.y, width: 20, height: 13};
+                var rect6 = {x: helpCoords2.x, y: helpCoords2.y, width: 20, height: 13};
+                var rect7 = {x: helpCoords3.x, y: helpCoords3.y, width: 20, height: 13};
+                if (rect1.x < rect5.x + rect5.width && rect1.x + rect1.width > rect5.x && rect1.y < rect5.y + rect5.height && rect1.height + rect1.y > rect5.y) {
+                  helpCoords.x = 500;
+                  helpCoords.y = Math.floor((Math.random() * 220) + 1);
+                  score = score + 100;
+                } else if (rect1.x < rect6.x + rect6.width && rect1.x + rect1.width > rect6.x && rect1.y < rect6.y + rect6.height && rect1.height + rect1.y > rect6.y) {
+                  helpCoords2.x = 500;
+                  helpCoords2.y = Math.floor((Math.random() * 220) + 1);
+                  score = score + 100;
+                } else if (rect1.x < rect7.x + rect7.width && rect1.x + rect1.width > rect7.x && rect1.y < rect7.y + rect7.height && rect1.height + rect1.y > rect7.y) {
+                  helpCoords3.x = 500;
+                  helpCoords3.y = Math.floor((Math.random() * 220) + 1);
+                  score = score + 100;
+                }
+                // draw text (lives and score)
+                ctx.font = "25px Arial";
+                ctx.fillStyle = "#ffffff";
+                ctx.fillText("Chances: " + lives + "  Points: " + score, 0, 25);
+                window.requestAnimationFrame(animate);
+                // if lives are out, end game
+                if (lives == 0 || lives < 0) {
+                    ctx.font = "30px Arial";
+                    ctx.fillStyle = "#ffffff";
+                    ctx.fillText("You Lose", 175, c.height / 2);
+                    lives = 0;
+                    score = 0;
+                }
+              }
+              // start of animation loop
+              window.requestAnimationFrame(animate);
+              // event handler for moving player
+              $(document).keydown(function(e) {
+                ctx.clearRect(0, 0, c.width, c.height);
+                ctx.drawImage(background, 0, 0);
+                if (e.keyCode == 38 || e.keyCode == 87) {
+                    if (player.y > 5) {
+                      player.y = player.y - 10;
+                    }
+                } else if (e.keyCode == 40 || e.keyCode == 83) {
+                    if (player.y < 210) {
+                      player.y = player.y + 10;
+                    }
+                }
+                ctx.drawImage(image, player.x, player.y);
+              });
+            });
+          });
+        </script>
+    </body>
+</html>
